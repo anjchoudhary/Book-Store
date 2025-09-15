@@ -9,7 +9,10 @@ import userRoute from "./route/user.route.js";
 dotenv.config();
 const app = express()
 
-app.use(cors());
+app.use(cors({
+  origin: "https://<your-frontend-domain>",  // Replace with your actual frontend URL
+  credentials: true
+}));
 app.use(express.json());
 
 
@@ -34,3 +37,4 @@ app.use("/user",userRoute)
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
 })
+
