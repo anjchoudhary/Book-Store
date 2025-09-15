@@ -10,7 +10,8 @@ dotenv.config();
 const app = express()
 
 app.use(cors({
-  origin: "https://<your-frontend-domain>",  // Replace with your actual frontend URL
+  origin: "https://book-store-frontend-1ph5.onrender.com",  // Replace with your actual frontend URL
+  methods: ["GET","POST","PUT","DELETE"],
   credentials: true
 }));
 app.use(express.json());
@@ -37,4 +38,5 @@ app.use("/user",userRoute)
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`)
 })
+
 
